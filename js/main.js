@@ -1,3 +1,5 @@
+count = 1;
+
 function addItem() {
 	const input = document.getElementById('input').value;
 	// if user input is empty, don't add anything to to-do list
@@ -6,6 +8,7 @@ function addItem() {
 	const div = document.createElement('div');
 	const text = document.createElement('li');
 	text.className = 'list-group-item col-md-4 col-md-offset-4';
+	text.id = "item"+count;
 
 	text.innerHTML = input;
 	body.appendChild(div);
@@ -13,7 +16,11 @@ function addItem() {
 	}
 	// clears out input form after content has been added
 	document.getElementById('input').value = '';
+
+	// delete this item when clicked
+	// document.getElementById();
 }
+
 // adds functionality to Add button
 document.getElementById('add').onclick = function() {
 	addItem(); // calls addItem function
@@ -22,7 +29,8 @@ document.getElementById('add').onclick = function() {
 // create delete button next to new to-do item
 function deleteItem(item) {
 	const remove = document.getElementById(item);
-
+	const itemList = remove.parentNode;
+	itemList.removeChild(remove);
 }
 
 // adds input on Enter/Return key
