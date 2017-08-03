@@ -19,6 +19,8 @@ function addItem() {
 
 	// delete this item when clicked
 	// document.getElementById();
+
+	return count++;
 }
 
 // adds functionality to Add button
