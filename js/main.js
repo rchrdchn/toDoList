@@ -16,9 +16,17 @@ function addItem() {
 	}
 	// clears out input form after content has been added
 	document.getElementById('input').value = '';
+	
+	console.log(input + count);
 
 	// delete this item when clicked
-	// document.getElementById();
+	const deleteButton = document.createElement('button');
+	deleteButton.className = 'remove';
+	deleteButton.id = 'remote'+count;
+	const deleteButtonText = document.createTextNode('delete');
+	deleteButton.appendChild(deleteButtonText);
+	const addButton = document.getElementsByClassName('list-group-item')[count-1];
+	addButton.appendChild(deleteButton);
 
 	return count++;
 }
