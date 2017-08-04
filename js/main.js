@@ -7,7 +7,7 @@ function addItem() {
 	const body = document.getElementById('toDoList');
 	const div = document.createElement('div');
 	const text = document.createElement('li');
-	text.className = 'list-group-item col-md-4 col-md-offset-4';
+	text.className = 'list-group-item col-md-4 col-md-offset-4 item';
 	text.id = "item"+count;
 
 	text.innerHTML = input;
@@ -23,7 +23,7 @@ function addItem() {
 	const deleteButton = document.createElement('button');
 	deleteButton.className = 'remove';
 	deleteButton.id = 'remote'+count;
-	const deleteButtonText = document.createTextNode('delete');
+	const deleteButtonText = document.createTextNode('x');
 	deleteButton.appendChild(deleteButtonText);
 	const addButton = document.getElementsByClassName('list-group-item')[count-1];
 	addButton.appendChild(deleteButton);
