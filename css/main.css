@@ -9,3 +9,13 @@ body {
 .title {
 	/* background-color: #FFFDE7; */
 }
+
+.item {
+	text-align: left;
+}
+
+.remove {
+	float: right;
+	border: none;
+	background: transparent;
+}
