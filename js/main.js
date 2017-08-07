@@ -1,6 +1,8 @@
+// count for items' ID
 count = 1;
 
 function addItem() {
+	// gets user's input value
 	const input = document.getElementById('input').value;
 	// if user input is empty, don't add anything to to-do list
 	if (input != '') {
@@ -22,11 +24,15 @@ function addItem() {
 	// delete this item when clicked
 	const deleteButton = document.createElement('button');
 	deleteButton.className = 'remove';
-	deleteButton.id = 'remote'+count;
+	deleteButton.id = 'remove'+count;
 	const deleteButtonText = document.createTextNode('x');
 	deleteButton.appendChild(deleteButtonText);
 	const addButton = document.getElementsByClassName('list-group-item')[count-1];
 	addButton.appendChild(deleteButton);
+
+	document.getElementById(deleteButton.id).onclick = function() {
+		deleteItem(text);
+	}
 
 	return count++;
 }
@@ -41,6 +47,7 @@ function deleteItem(item) {
 	const remove = document.getElementById(item);
 	const itemList = remove.parentNode;
 	itemList.removeChild(remove);
+	console.log("removed")
 }
 
 // adds input on Enter/Return key
