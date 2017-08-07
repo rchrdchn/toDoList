@@ -4,6 +4,9 @@ count = 1;
 function addItem() {
 	// gets user's input value
 	const input = document.getElementById('input').value;
+	// clears out input form after content has been added
+	document.getElementById('input').value = '';
+
 	// if user input is empty, don't add anything to to-do list
 	if (input != '') {
 	const body = document.getElementById('toDoList');
@@ -15,9 +18,6 @@ function addItem() {
 	text.innerHTML = input;
 	body.appendChild(div);
 	div.appendChild(text);
-	}
-	// clears out input form after content has been added
-	document.getElementById('input').value = '';
 	
 	console.log(input + count);
 
@@ -31,10 +31,12 @@ function addItem() {
 	addButton.appendChild(deleteButton);
 
 	document.getElementById(deleteButton.id).onclick = function() {
-		deleteItem(text);
-	}
+		deleteItem(text.id)
+	};
 
 	return count++;
+	}
+	return
 }
 
 // adds functionality to Add button
