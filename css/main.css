@@ -12,6 +12,8 @@ body {
 
 .item {
 	text-align: left;
+	color: lightblue;
+	margin-top: 3px;
 }
 
 .remove {
